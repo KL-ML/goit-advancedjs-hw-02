@@ -25,6 +25,9 @@
   --input-hover-color: #000000;
   --bg-gray-color: #f6f6fe;
   --bg-white-color: #ffffff;
+  --disabled-input-bg: #fafafa;
+  --disabled-btn-color: #CFCFCF;
+  --disabled-text-color: #989898;
   /* fonts */
   --text-font-family: 'Montserrat', serif;
 }
