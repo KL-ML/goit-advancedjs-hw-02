@@ -51,16 +51,38 @@
           <fieldset class="snackbar-form-fieldset">
             <legend class="snackbar-form-legend">State</legend>
             <label class="state-lable">
-              <input class="state-input" type="radio" name="state" value="fulfilled" required />
+              <input
+                type="radio"
+                name="state"
+                value="fulfilled"
+                required
+              />
+              <span class="state-icon">
+                <svg width="12" height="12">
+                  <use href="./img/symbol-defs.svg#icon-checked"></use>
+                </svg>
+              </span>
               Fulfilled
             </label>
             <label class="state-lable">
-              <input class="state-input" type="radio" name="state" value="rejected" required />
+              <input
+                type="radio"
+                name="state"
+                value="rejected"
+                required
+              />
+              <span class="state-icon">
+                <svg width="12" height="12">
+                  <use href="./img/symbol-defs.svg#icon-checked"></use>
+                </svg>
+              </span>
               Rejected
             </label>
           </fieldset>
 
-          <button type="submit">Create notification</button>
+          <button class="snackbar-btn" type="submit">
+            Create notification
+          </button>
         </form>
       </div>
     </main>
