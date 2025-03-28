@@ -36,8 +36,7 @@ function onFormSubmit(event) {
         position: 'topRight',
         backgroundColor: 'rgba(89, 161, 13, 0.99)',
         messageColor: '#FFFFFF',
-        iconUrl: '/img/bi_check2-circle.svg',
-        iconColor: '#FFFFFF',
+        icon: '',
         close: false,
       });
     })
@@ -50,8 +49,7 @@ function onFormSubmit(event) {
         position: 'topRight',
         backgroundColor: 'rgba(239, 64, 64, 0.99)',
         messageColor: '#FFFFFF',
-        iconUrl: '/img/bi_x-octagon.svg',
-        iconColor: '#FFFFFF',
+        icon: '',
         close: false,
       });
     });
