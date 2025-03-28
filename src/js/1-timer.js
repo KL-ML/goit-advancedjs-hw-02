@@ -22,7 +22,7 @@ flatpickr(datetimeInput, {
         position: 'topRight',
         backgroundColor: 'rgba(239, 64, 64, 0.99)',
         messageColor: '#FFFFFF',
-        iconUrl: './img/bi_x-octagon.svg',
+        iconUrl: '/img/bi_x-octagon.svg',
         iconColor: '#FFFFFF',
         close: false,
       });
