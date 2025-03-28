@@ -12,10 +12,11 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400..600&display=swap"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="/goit-advancedjs-hw-02/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
-    <script type="module" crossorigin src="/goit-advancedjs-hw-02/assets/vendor-A92OCY9B.js"></script>
+    <script type="module" crossorigin src="/goit-advancedjs-hw-02/2-snackbar.js"></script>
+    <link rel="modulepreload" crossorigin href="/goit-advancedjs-hw-02/assets/modulepreload-polyfill-B5Qt9EMX.js">
+    <link rel="modulepreload" crossorigin href="/goit-advancedjs-hw-02/assets/vendor-A92OCY9B.js">
     <link rel="stylesheet" crossorigin href="/goit-advancedjs-hw-02/assets/vendor-CUZofXIC.css">
-    <link rel="stylesheet" crossorigin href="/goit-advancedjs-hw-02/assets/styles-CHyddnhA.css">
+    <link rel="stylesheet" crossorigin href="/goit-advancedjs-hw-02/assets/styles-DCxtpztQ.css">
   </head>
   <body>
     <header class="header">
@@ -54,16 +55,38 @@
           <fieldset class="snackbar-form-fieldset">
             <legend class="snackbar-form-legend">State</legend>
             <label class="state-lable">
-              <input class="state-input" type="radio" name="state" value="fulfilled" required />
+              <input
+                type="radio"
+                name="state"
+                value="fulfilled"
+                required
+              />
+              <span class="state-icon">
+                <svg width="12" height="12">
+                  <use href="/goit-advancedjs-hw-02/assets/symbol-defs-CTi7ofM-.svg#icon-checked"></use>
+                </svg>
+              </span>
               Fulfilled
             </label>
             <label class="state-lable">
-              <input class="state-input" type="radio" name="state" value="rejected" required />
+              <input
+                type="radio"
+                name="state"
+                value="rejected"
+                required
+              />
+              <span class="state-icon">
+                <svg width="12" height="12">
+                  <use href="/goit-advancedjs-hw-02/assets/symbol-defs-CTi7ofM-.svg#icon-checked"></use>
+                </svg>
+              </span>
               Rejected
             </label>
           </fieldset>
 
-          <button type="submit">Create notification</button>
+          <button class="snackbar-btn" type="submit">
+            Create notification
+          </button>
         </form>
       </div>
     </main>
