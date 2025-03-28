@@ -1,12 +1,14 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-const formEl = document.querySelector('.snackbar-form');
+const form = document.querySelector('.form');
+const delayInput = document.querySelector("[name='delay']");
+form.addEventListener('submit', onFormSubmit);
 
-function createPromise(delay, result) {
+function createPromise(delay, state) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (result) {
+      if (state === 'fulfilled') {
         resolve({ delay });
       } else {
         reject({ delay });
@@ -17,16 +19,39 @@ function createPromise(delay, result) {
 
 function onFormSubmit(event) {
   event.preventDefault();
-  if (!event.target.tagName === 'BUTTON') return;
-
-  const {
-    elements: { delay, state },
-  } = event.currentTarget;
-
-  const delayInp = Number(delay.value);
-  const resultInp = state.value === 'fulfilled' ? true : false;
-
-  createPromise(delayInp, resultInp)
+  const delayBeforCheck = Number(delayInput.value);
+  if (delayBeforCheck <= 0 || delayBeforCheck === null) {
+    iziToast.error({
+      title: 'Error',
+      titleColor: '#FFFFFF',
+      timeout: 4000,
+      message: `Delay should be a positive number`,
+      position: 'topRight',
+      backgroundColor: 'rgba(239, 64, 64, 0.99)',
+      messageColor: '#FFFFFF',
+      icon: '',
+      close: false,
+    });
+    return;
+  }
+  const radioChecked = form.querySelector('input[name="state"]:checked');
+  if (radioChecked === null) {
+    iziToast.error({
+      title: 'Error',
+      titleColor: '#FFFFFF',
+      timeout: 4000,
+      message: `Choose a state please`,
+      position: 'topRight',
+      backgroundColor: 'rgba(239, 64, 64, 0.99)',
+      messageColor: '#FFFFFF',
+      icon: '',
+      close: false,
+    });
+    return;
+  }
+  const state = radioChecked.value
+  const delay = Number(delayInput.value);
+  createPromise(delay, state)
     .then(({ delay }) => {
       iziToast.success({
         title: 'OK',
@@ -53,8 +78,5 @@ function onFormSubmit(event) {
         close: false,
       });
     });
-
   event.currentTarget.reset();
 }
-
-formEl.addEventListener('submit', onFormSubmit);
